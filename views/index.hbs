@@ -1,1 +1,10 @@
-<h2>index</h2>
+<ul>
+{{#each expenses}}
+  <li>
+    {{this.name}}
+    {{this.date}}
+    {{this.category}}
+    {{this.amount}}
+  </li>
+{{/each}}
+</ul>
