@@ -11,6 +11,6 @@ db.on('error', () => {
 })
 db.once('open', () => {
   console.log('mongodb connected!')
-  Expense.create({name: 'lunch', date: '', category: 'Chinese', amount: 250, totalAmount: 250})
+  Expense.create({name: 'lunch', date: '', category: 'Chinese', expense: 250, totalAmount: 250})
   console.log('done')
 })

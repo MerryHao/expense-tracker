@@ -13,7 +13,7 @@ const expenseListSchema = new Schema({
     type: String,
     required: true
   },
-  amount: {
+  expense: {
     type: Number,
     required: true
   },
