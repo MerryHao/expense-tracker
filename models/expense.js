@@ -16,6 +16,10 @@ const expenseListSchema = new Schema({
   amount: {
     type: Number,
     required: true
+  },
+  totalAmount: {
+    type: Number,
+    require: false
   }
 })
 module.exports = mongoose.model('ExpenseList', expenseListSchema)
