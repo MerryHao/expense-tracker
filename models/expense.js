@@ -6,20 +6,18 @@ const expenseListSchema = new Schema({
     required: true
   },
   date: {
-    type: Date,
-    default: Date.now
-  },
-  category: {
     type: String,
+    require: true
+  },
+  categoryId: {
+    type: Number,
+    ref: 'Category',
+    index: true,
     required: true
   },
-  expense: {
+  amount: {
     type: Number,
     required: true
-  },
-  totalAmount: {
-    type: Number,
-    require: false
   }
 })
 module.exports = mongoose.model('ExpenseList', expenseListSchema)
