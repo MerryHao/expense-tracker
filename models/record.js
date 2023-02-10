@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const expenseListSchema = new Schema({
+const recordSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -20,4 +20,4 @@ const expenseListSchema = new Schema({
     required: true
   }
 })
-module.exports = mongoose.model('ExpenseList', expenseListSchema)
+module.exports = mongoose.model('Record', recordSchema)

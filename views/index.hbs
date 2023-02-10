@@ -1,13 +1,13 @@
-<a href="./expenses/new">Create</a>
+<a href="./records/new">Create</a>
 <ul>
-{{#each expenses}}
+{{#each records}}
   <li>
     {{this.name}}
     {{this.date}}
     {{this.category}}
     {{this.amount}}
     {{this.totalAmount}}
-    <a href="./expenses/{{this._id}}/edit">編輯</a>
+    <a href="./records/{{this._id}}/edit">編輯</a>
   </li>
 {{/each}}
 </ul>

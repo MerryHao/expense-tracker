@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Expense = require('../expense')
+const Record = require('../record')
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -11,6 +11,6 @@ db.on('error', () => {
 })
 db.once('open', () => {
   console.log('mongodb connected!')
-  Expense.create({name: 'lunch', date: '2023-02-03', categoryId: 1, expense: 250})
+  Record.create({name: 'lunch', date: '2023-02-03', categoryId: 1, amount: 250})
   console.log('done')
 })

@@ -1,24 +1,24 @@
 const express = require('express')
 const router = express.Router()
-const Expense = require('../../models/expense')
+const Record = require('../../models/record')
 router.get('/new', (req, res) => {
   return res.render('new')
 })
 router.post('/', (req, res) => {
-  return Expense.create(req.body)
+  return Record.create(req.body)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 router.get('/:id/edit', (req, res) => {
   const { id }= req.params
-  return Expense.findById(id)
+  return Record.findById(id)
   .lean()  
-  .then(expense => res.render('edit', { expense }))
+  .then(record => res.render('edit', { record }))
   .catch(error => console.log(error))
 })
 router.put('/:id', (req, res) => {
   const { id } = req.params
-  return Expense.findByIdAndUpdate(id, req.body)
+  return Record.findByIdAndUpdate(id, req.body)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })

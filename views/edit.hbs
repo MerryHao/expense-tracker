@@ -1,16 +1,16 @@
 <div class="container mt-5">
-  <form action="/expenses/{{ expense._id }}?_method=PUT" method="POST">
+  <form action="/records/{{ record._id }}?_method=PUT" method="POST">
     <div class="mb-3">
       <label for="name" class="form-label">名稱:<span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="name" placeholder="項目名稱" name="name" value="{{ expense.name }}"required />
+      <input type="text" class="form-control" id="name" placeholder="項目名稱" name="name" value="{{ record.name }}"required />
     </div>
     <div class="mb-3">
       <label for="date" class="form-label">日期:<span class="text-danger">*</span></label>
-      <input type="date" class="form-control" id="date" name="date" value="{{ expense.date }}" required />
+      <input type="date" class="form-control" id="date" name="date" value="{{ record.date }}" required />
     </div>
     <div class="mb-3">
       <label for="category" class="form-label">類別:<span class="text-danger">*</span></label>
-      <select class="form-select" name="categoryId" id="category" value="{{ expense.categoryId }}" >
+      <select class="form-select" name="categoryId" id="category" value="{{ record.categoryId }}" >
         <option value="">類別</option>
         <option value="1">家居物業</option>
         <option value="2">交通出行</option>
@@ -21,7 +21,7 @@
     </div>
     <div class="mb-3">
       <label for="amount" class="form-label">支出:<span class="text-danger">*</span></label>
-      <input type="number" class="form-control" id="amount" placeholder="金額" name="amount" value="{{ expense.amount }}" required />
+      <input type="number" class="form-control" id="amount" placeholder="金額" name="amount" value="{{ record.amount }}" required />
       <div class="text-center mt-2">
         <button type="submit" class="btn btn-primary">
           修改支出
