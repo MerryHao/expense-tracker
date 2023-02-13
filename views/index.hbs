@@ -1,13 +1,48 @@
-<a href="./records/new">Create</a>
-<ul>
-{{#each records}}
-  <li>
-    {{this.name}}
-    {{this.date}}
-    {{this.category}}
-    {{this.amount}}
-    {{this.totalAmount}}
-    <a href="./records/{{this._id}}/edit">編輯</a>
-  </li>
-{{/each}}
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-6 m-auto mt-5">
+      <form action="/">
+        <select name="categoryId" id="category">
+          <option value="">類別</option>
+          <option value="1">家居物業</option>
+          <option value="2">交通出行</option>
+          <option value="3">休閒娛樂</option>
+          <option value="4">餐飲食品</option>
+          <option value="5">其他</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 m-auto mt-1">
+      <h6>總金額</h6>
+      <p>{{records.totalAmount}}</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-6 m-auto mt-1">
+      <ul class="list-group">
+        {{#each records}}
+        <li class="list-group-item">
+          <i>icon</i>
+          <div class="item-name"></div>
+          {{this.date}}
+          {{this.category}}
+          {{this.amount}}
+          <a href="./records/{{this._id}}/edit">編輯</a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-6 m-auto mt-1">
+      <a href="./records/new">新增支出</a>
+    </div>
+  </div>
+
+  
+  
+</div>
