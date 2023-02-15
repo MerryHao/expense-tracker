@@ -5,6 +5,7 @@ const routes = require('./routes')
 const PORT = process.env.PORT || 3000
 const methodOverride = require('method-override')
 const session = require('express-session')
+const usePassport = require('./config/passport')
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -20,6 +21,7 @@ app.use(session({
 }))
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
+usePassport(app)
 app.use(routes)
 app.listen(PORT, (res, req) => {
   console.log(`Express is listen on http://localhost:${PORT}`)
