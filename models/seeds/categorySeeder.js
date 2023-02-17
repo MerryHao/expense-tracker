@@ -1,5 +1,11 @@
+const mongoose = require('mongoose')
 const Category = require('../category')
-const db = require('../../config/mongoose')
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+mongoose.set('strictQuery', true)
+mongoose.connect(process.env.MONGODB_URI)
+const db = mongoose.connection
 const categoryList = [
   {
     id: 1,
@@ -23,10 +29,7 @@ const categoryList = [
   }
 ]
 
-const db = require('../../config/mongoose')
-
 db.once('open', () => {
-  console.log('categorySeeder done')
   Promise.all(
     Array.from(
       { length: 5 },
@@ -34,7 +37,7 @@ db.once('open', () => {
     )
   )
     .then(() => {
-      console.log('123')
+      console.log('category done!')
       process.exit()
     })
     .catch((error) => console.log(error))
