@@ -30,7 +30,7 @@ router.get('/search', (req, res) => {
       for(let i = 0; i < findRecord.length; i++){
         totalAmount += findRecord[i].amount
       }
-      res.render('index', { record: findRecord, id, totalAmount })
+      res.render('index', { records: findRecord, id, totalAmount })
     })
     .catch(error => console.log(error))
 })
