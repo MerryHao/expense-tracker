@@ -15,8 +15,8 @@
   </div>
   <div class="row">
     <div class="col-6 m-auto mt-1">
-      <h6>總金額</h6>
-      <p>{{totalAmount}}</p>
+      <h6 style="text-align: center">總金額</h6>
+      <p style="font-size: xx-large;">{{totalAmount}} 元</p>
     </div>
   </div>
   
@@ -33,12 +33,11 @@
             {{#ifEquals 5 this.categoryId}}<i class="fa-solid fa-pen"></i>{{/ifEquals}}
           </div>
           <div class="item-name"></div>
-          {{this.date}}
-          {{this.category}}
-          {{this.amount}}
-          <a href="./records/{{this._id}}/edit">編輯</a>
+          {{this.date}},
+          {{this.amount}}元
+          <a href="./records/{{this._id}}/edit"><button class="btn btn-secondary btn-sm m-1">編輯</button></a>
           <form action="/records/{{this._id}}?_method=DELETE" method="POST" style="display: inline;">
-            <button type="submit">刪除</button>
+            <button type="submit" class="btn btn-danger btn-sm m-1">刪除</button>
           </form>
         </li>
         {{/each}}
