@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-6 m-auto mt-5">
-      <form action="/">
-        <select name="categoryId" id="category">
-          <option value="">類別</option>
-          <option value="1">家居物業</option>
-          <option value="2">交通出行</option>
-          <option value="3">休閒娛樂</option>
-          <option value="4">餐飲食品</option>
-          <option value="5">其他</option>
+      <form action="/search" method="GET">
+        <select type="submit" name="categoryId" id="category" onchange="this.form.submit()">
+          <option value="6" {{#ifEquals 6 id }}selected{{/ifEquals}}>類別</option>
+          <option value="1" {{#ifEquals 1 id }}selected{{/ifEquals}}>家居物業</option>
+          <option value="2" {{#ifEquals 2 id }}selected{{/ifEquals}}>交通出行</option>
+          <option value="3" {{#ifEquals 3 id }}selected{{/ifEquals}}>休閒娛樂</option>
+          <option value="4" {{#ifEquals 4 id }}selected{{/ifEquals}}>餐飲食品</option>
+          <option value="5" {{#ifEquals 5 id }}selected{{/ifEquals}}>其他</option>
         </select>
       </form>
     </div>

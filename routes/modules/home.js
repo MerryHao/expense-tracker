@@ -14,4 +14,24 @@ router.get('/', (req, res) => {
     })
     .catch(error => console.log(error))
 })
+router.get('/search', (req, res) => {
+  const userId = req.user._id
+  const id = req.query.categoryId
+  if(id === '6') {
+    return res.redirect('/')
+  }
+  Record.find({ userId })
+    .lean()
+    .then(records => {
+      const findRecord = records.filter(data =>
+        data.categoryId === Number(id)
+      )
+      let totalAmount = 0
+      for(let i = 0; i < findRecord.length; i++){
+        totalAmount += findRecord[i].amount
+      }
+      res.render('index', { record: findRecord, id, totalAmount })
+    })
+    .catch(error => console.log(error))
+})
 module.exports = router
