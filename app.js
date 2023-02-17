@@ -13,7 +13,10 @@ if (process.env.NODE_ENV !== 'production') {
 
 require('./config/mongoose')
 
-app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs', helpers: {
+  ifEquals: (a, b, options) =>
+    String(a) === String(b) ? options.fn(this) : options.inverse(this)
+}}))
 app.set('view engine', 'hbs')
 app.use(session({
   secret: 'ThisIsMySecret',

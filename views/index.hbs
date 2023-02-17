@@ -25,7 +25,13 @@
       <ul class="list-group">
         {{#each records}}
         <li class="list-group-item">
-          <i>icon</i>
+          <div class="col-1">
+            {{#ifEquals 1 this.categoryId}}<i class="fa-solid fa-house"></i>{{/ifEquals}}
+            {{#ifEquals 2 this.categoryId}}<i class="fa-solid fa-van-shuttle"></i>{{/ifEquals}}
+            {{#ifEquals 3 this.categoryId}}<i class="fa-solid fa-face-grin-beam"></i>{{/ifEquals}}
+            {{#ifEquals 4 this.categoryId}}<i class="fa-solid fa-utensils"></i>{{/ifEquals}}
+            {{#ifEquals 5 this.categoryId}}<i class="fa-solid fa-pen"></i>{{/ifEquals}}
+          </div>
           <div class="item-name"></div>
           {{this.date}}
           {{this.category}}
